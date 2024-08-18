@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Mostruns());
-}
-
 class Mostruns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return (MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Orange Cap'),
-          ),
-          body: ( Orangecap())
-          ),
-    ));
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Orange Cap'),
+        ),
+        body: (Orangecap()));
   }
 }
 
@@ -54,7 +47,6 @@ class Orangecap extends StatelessWidget {
         DataCell(Text('499')),
         DataCell(Text('145')),
         DataCell(Text('MI')),
-
       ])
     ]);
   }

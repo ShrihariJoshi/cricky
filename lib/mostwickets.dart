@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Mostwickets());
-}
-
 class Mostwickets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return (MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Purple Cap'),
-          ),
-          body: ( Purplecap())
-          ),
-    ));
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Purple Cap'),
+        ),
+        body: (Purplecap()));
   }
 }
 
@@ -40,7 +33,7 @@ class Purplecap extends StatelessWidget {
         DataCell(Text('RCB')),
       ]),
       DataRow(cells: [
-        DataCell(Text('2')),  
+        DataCell(Text('2')),
         DataCell(Text('Smrit Mandhana')),
         DataCell(Text('14')),
         DataCell(Text('29')),
@@ -54,7 +47,6 @@ class Purplecap extends StatelessWidget {
         DataCell(Text('25')),
         DataCell(Text('7.72')),
         DataCell(Text('RR')),
-
       ])
     ]);
   }
