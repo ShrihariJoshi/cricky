@@ -27,10 +27,18 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: const <Widget>[
             DrawerHeader(
-                child: Text(
-              'CRICBASE',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            )),
+              margin: EdgeInsets.all(0.0),
+              padding: EdgeInsets.only(top: 30.0),
+              child: Text(
+                'CRICBASE',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Image(
+              alignment: Alignment.center,
+              image: AssetImage('assets/images/CRICBASE.jpg'),
+            ),
             ListTile(
               leading: Icon(Icons.feedback, color: Colors.black),
               title: Text('Rate the App',
