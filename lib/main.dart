@@ -1,22 +1,27 @@
 import 'package:cricky/mostRuns.dart';
 import 'package:cricky/mostwickets.dart';
 import 'package:cricky/pointsTable.dart';
+import 'package:cricky/rating.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(CricbaseApp());
+  runApp(const CricbaseApp());
 }
 
 class CricbaseApp extends StatelessWidget {
+  const CricbaseApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,26 +30,29 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: const <Widget>[
-            DrawerHeader(
-              margin: EdgeInsets.all(0.0),
-              padding: EdgeInsets.only(top: 30.0),
-              child: Text(
-                'CRICBASE',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
-              ),
-            ),
-            Image(
+          children:  <Widget>[
+            // const DrawerHeader(
+            //   margin: EdgeInsets.all(0.0),
+            //   padding: EdgeInsets.only(top: 30.0),
+            //   child: Text(
+            //     'CRICBASE',
+            //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            //     textAlign: TextAlign.left,
+            //   ),
+            // ),
+            const Image(
               alignment: Alignment.center,
               image: AssetImage('assets/images/CRICBASE.jpg'),
             ),
-            ListTile(
-              leading: Icon(Icons.feedback, color: Colors.black),
-              title: Text('Rate the App',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            TextButton(
+              child: const Text('Rate the App',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.black,),),
+            //  leading: Icon(Icons.feedback, color: Colors.black),
+                  onPressed: () { 
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Rating()));
+                  },
             ),
-            ExpansionTile(
+            const ExpansionTile(
                 leading: Icon(Icons.headset_mic, color: Colors.black),
                 title: Text('Support',
                     style:
