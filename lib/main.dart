@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children:  <Widget>[
+          children: <Widget>[
             // const DrawerHeader(
             //   margin: EdgeInsets.all(0.0),
             //   padding: EdgeInsets.only(top: 30.0),
@@ -42,19 +42,50 @@ class HomeScreen extends StatelessWidget {
             // ),
             const Image(
               alignment: Alignment.center,
+              colorBlendMode: BlendMode.color,
               image: AssetImage('assets/images/CRICBASE.jpg'),
             ),
-            TextButton(
-              child: const Text('Rate the App',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.black,),),
-            //  leading: Icon(Icons.feedback, color: Colors.black),
-                  onPressed: () { 
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Rating()));
-                  },
-            ),
+            GestureDetector(
+                child: Container(
+                  padding: const EdgeInsets.all(5.0),
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 2.0, color: Colors.white),
+                    boxShadow: [
+                     
+                        BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 4,
+                  blurRadius: 10,
+                  offset: const Offset(0, 3),
+                
+                      )
+                      ,
+                    ],
+                    color: Colors.cyan,
+                  ),
+                  child: const Text(
+                    'Rate the App',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  //  leading: Icon(Icons.feedback, color: Colors.black),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Rating()));
+                }),
             const ExpansionTile(
-                leading: Icon(Icons.headset_mic, color: Colors.black),
-                title: Text('Support',
+                // backgroundColor: Colors.cyan,
+                // shape: Border.all(         
+                // color: Colors.black,      
+                // width: 2.0,
+                // ),
+                leading:  Icon(Icons.headset_mic, color: Colors.black),
+                title:  Text('Support',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 children: <Widget>[
