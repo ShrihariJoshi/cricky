@@ -31,52 +31,47 @@ class HomeScreen extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            // const DrawerHeader(
-            //   margin: EdgeInsets.all(0.0),
-            //   padding: EdgeInsets.only(top: 30.0),
-            //   child: Text(
-            //     'CRICBASE',
-            //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            //     textAlign: TextAlign.left,
-            //   ),
-            // ),
             const Image(
               alignment: Alignment.center,
               colorBlendMode: BlendMode.color,
               image: AssetImage('assets/images/CRICBASE.jpg'),
             ),
-            ListTile(
-              leading: const Icon(Icons.feedback),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Rating()));
-              },
-              tileColor: Colors.cyan,
-              // decoration: BoxDecoration(
-              //   border: Border.all(width: 2.0, color: Colors.white),
-              //   boxShadow: [
-              //     BoxShadow(
-              //       color: Colors.black.withOpacity(0.2),
-              //       spreadRadius: 4,
-              //       blurRadius: 10,
-              //       offset: const Offset(0, 3),
-              //     ),
-              //   ],
-              // ),
-              title: const Text(
-                'Rate the App',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+            Container(
+              decoration: const BoxDecoration(
+                  border: Border(
+                top: BorderSide(width: 2.0),
+                left: BorderSide(width: 2.0),
+                right: BorderSide(width: 2.0),
+                bottom: BorderSide(width: 1.0),
+              )),
+              child: ListTile(
+                leading: const Icon(Icons.feedback),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Rating()));
+                },
+                tileColor: const Color.fromARGB(255, 89, 204, 220),
+                title: const Text(
+                  'Rate the App',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),
             Container(
-              decoration: BoxDecoration(
-                border: Border.all(width: 2.0, color: Colors.black),
-              ),
+              decoration: const BoxDecoration(
+                  border: Border(
+                top: BorderSide(width: 1.0),
+                left: BorderSide(width: 2.0),
+                right: BorderSide(width: 2.0),
+                bottom: BorderSide(width: 2.0),
+              )),
               child: ExpansionTile(
+                collapsedBackgroundColor:
+                    const Color.fromARGB(255, 89, 204, 220),
                 shape: Border.all(
                   color: Colors.black,
                   width: 2.0,
