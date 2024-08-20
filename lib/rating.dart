@@ -6,7 +6,8 @@ class StarRating extends StatelessWidget {
   final int maxRating;
   final Function(int) onRatingChanged;
 
-  const StarRating({super.key, 
+  const StarRating({
+    super.key,
     required this.rating,
     this.maxRating = 5,
     required this.onRatingChanged,
@@ -49,8 +50,10 @@ class _MyAppState extends State<Rating> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) =>  const HomeScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
               },
               child: const Text('OK'),
             ),
@@ -62,30 +65,37 @@ class _MyAppState extends State<Rating> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Rate the CRICBASE App!'),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              StarRating(
-                rating: _currentRating,
-                onRatingChanged: (rating) {
-                  setState(() {
-                    _currentRating = rating;
-                  });
-                },
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _currentRating > 0 ? _submitRating : null,
-                child: const Text('Submit'),
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rate the CRICBASE App!'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            StarRating(
+              rating: _currentRating,
+              onRatingChanged: (rating) {
+                setState(() {
+                  _currentRating = rating;
+                });
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _currentRating > 0 ? _submitRating : null,
+              child: const Text('Submit'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
         ),
       ),
     );

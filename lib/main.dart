@@ -45,57 +45,58 @@ class HomeScreen extends StatelessWidget {
               colorBlendMode: BlendMode.color,
               image: AssetImage('assets/images/CRICBASE.jpg'),
             ),
-            GestureDetector(
-                child: Container(
-                  padding: const EdgeInsets.all(5.0),
-                  height: 40.0,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2.0, color: Colors.white),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 4,
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                    color: Colors.cyan,
-                  ),
-                  child: const Text(
-                    'Rate the App',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
+            ListTile(
+              leading: const Icon(Icons.feedback),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Rating()));
+              },
+              tileColor: Colors.cyan,
+              // decoration: BoxDecoration(
+              //   border: Border.all(width: 2.0, color: Colors.white),
+              //   boxShadow: [
+              //     BoxShadow(
+              //       color: Colors.black.withOpacity(0.2),
+              //       spreadRadius: 4,
+              //       blurRadius: 10,
+              //       offset: const Offset(0, 3),
+              //     ),
+              //   ],
+              // ),
+              title: const Text(
+                'Rate the App',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Rating()));
-                }),
+              ),
+            ),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 2.0,color: Colors.black),
+                border: Border.all(width: 2.0, color: Colors.black),
               ),
               child: ExpansionTile(
-                  shape: Border.all(
-                    color: Colors.black,
-                    width: 2.0,
+                shape: Border.all(
+                  color: Colors.black,
+                  width: 2.0,
+                ),
+                leading: const Icon(Icons.headset_mic, color: Colors.black),
+                title: const Text(
+                  'Support',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                children: const <Widget>[
+                  ListTile(
+                    title: Text('Contact Us: 080-260324XX'),
+                    leading: Icon(Icons.phone, color: Colors.black),
                   ),
-                  leading: const Icon(Icons.headset_mic, color: Colors.black),
-                  title: const Text('Support',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  children: const <Widget>[
-                    ListTile(
-                      title: Text('Contact Us: 080-260324XX'),
-                      leading: Icon(Icons.phone, color: Colors.black),
-                    ),
-                    ListTile(
-                        title: Text('Queries: cricbaseapp@gmail.com'),
-                        leading: Icon(Icons.mail, color: Colors.black))
-                  ]),
+                  ListTile(
+                    title: Text('Queries: cricbaseapp@gmail.com'),
+                    leading: Icon(Icons.mail, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
