@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
               child: ExpansionTile(
                   shape: Border.all(
                     color: Colors.black,
-                    width: 1.0,
+                    width: 2.0,
                   ),
                   leading: const Icon(Icons.headset_mic, color: Colors.black),
                   title: const Text('Support',
