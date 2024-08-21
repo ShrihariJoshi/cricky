@@ -48,6 +48,7 @@ class NavigationBarState extends State<NavigationBar> {
         child: widgetOptions.elementAt(selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 20,
         backgroundColor: const Color.fromARGB(255, 89, 204, 220),
         items: const [
           BottomNavigationBarItem(
@@ -60,8 +61,8 @@ class NavigationBarState extends State<NavigationBar> {
           ),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.blue,
         onTap: onItemTapped,
       ),
     );
