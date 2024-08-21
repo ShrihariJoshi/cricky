@@ -24,8 +24,9 @@ class Statistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[
-      const SizedBox(height: 16),
+    return Column(
+      children: <Widget>[
+      const SizedBox(height: 30, child: Align(alignment: Alignment.centerLeft,),),
       GestureDetector(
         onTap: () {
           Navigator.push(
@@ -39,7 +40,7 @@ class Statistics extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
-      const SizedBox(height: 16),
+      const SizedBox(height: 30),
       GestureDetector(
         onTap: () {
           Navigator.push(context,
@@ -50,7 +51,7 @@ class Statistics extends StatelessWidget {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
-      const SizedBox(height: 16),
+      const SizedBox(height: 30),
       GestureDetector(
         onTap: () {
           Navigator.push(

@@ -24,24 +24,25 @@ class CricbaseApp extends StatelessWidget {
 class NavigationBar extends StatefulWidget {
   const NavigationBar({super.key});
   @override
-  _NavigationBarState createState() => _NavigationBarState();
+  NavigationBarState createState() => NavigationBarState();
 }
-class _NavigationBarState extends State<NavigationBar>{
+
+class NavigationBarState extends State<NavigationBar> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-      int selectedIndex = 0;
-      
-  // List of widgets corresponding to each bottom navigation item
-  const List<Widget> widgetOptions = <Widget>[
-    HomeScreen(),
-    Stats(),
-  ];
+    // List of widgets corresponding to each bottom navigation item
+    const List<Widget> widgetOptions = <Widget>[
+      HomeScreen(),
+      Stats(),
+    ];
 
-  void onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
+    void onItemTapped(int index) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
+
     return Scaffold(
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
@@ -50,11 +51,11 @@ class _NavigationBarState extends State<NavigationBar>{
         backgroundColor: const Color.fromARGB(255, 89, 204, 220),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home), 
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.sports_cricket), 
+            icon: Icon(Icons.sports_cricket),
             label: 'Stats',
           ),
         ],
