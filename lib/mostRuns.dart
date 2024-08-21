@@ -1,29 +1,34 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class Mostruns extends StatelessWidget {
+  const Mostruns({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: Text('Orange Cap'),
+          title: const Text('Orange Cap'),
         ),
-        body: (Orangecap()));
+        body: (const Orangecap()));
   }
 }
 
 class Orangecap extends StatelessWidget {
+  const Orangecap({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return DataTable(columns: [
+    return DataTable(columns: const [
       DataColumn(label: Text('Standing')),
       DataColumn(label: Text('Name')),
       DataColumn(label: Text('Innings')),
       DataColumn(label: Text('Runs')),
       DataColumn(label: Text('Strike Rate')),
       DataColumn(label: Text('Team')),
-    ], rows: [
+    ], rows: const [
       DataRow(cells: [
         DataCell(Text('1')),
         DataCell(Text('Virat Kohli')),
