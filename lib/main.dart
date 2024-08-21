@@ -30,7 +30,7 @@ class _NavigationBarState extends State<NavigationBar>{
   @override
   Widget build(BuildContext context) {
       int selectedIndex = 0;
-
+      
   // List of widgets corresponding to each bottom navigation item
   const List<Widget> widgetOptions = <Widget>[
     HomeScreen(),

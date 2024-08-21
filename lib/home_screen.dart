@@ -7,14 +7,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: HomeScreenExtends(),
+        body: HomeScreenPage(),
       ),
     );
   }
 }
 
-class HomeScreenExtends extends HomeScreen{
-  const HomeScreenExtends({super.key});
+class HomeScreenPage extends HomeScreen{
+  const HomeScreenPage({super.key});
 
   @override
   Widget build(BuildContext context) {
