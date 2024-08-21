@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
         title: const Center(child: Text('CRICBASE')),
       ),
       drawer: Drawer(
+        // backgroundColor: const Color.fromARGB(255, 166, 51, 35),
         child: ListView(
           children: <Widget>[
             const Image(
