@@ -1,4 +1,4 @@
-import 'package:cricky/main.dart';
+import 'package:cricky/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class StarRating extends StatelessWidget {
