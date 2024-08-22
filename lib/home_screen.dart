@@ -102,17 +102,17 @@ class HomeScreenPage extends HomeScreen {
           ],
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Recent Matches:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Row(
+            const SizedBox(height: 8),
+            const Row(
               // options: CarouselOptions(
               //   height: 100,
               //   reverse: true,
@@ -136,13 +136,13 @@ class HomeScreenPage extends HomeScreen {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Upcoming Matches:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Row(
+            const SizedBox(height: 8),
+            const Row(
               children: [
                 MatchDetailWidget(
                   date: '19-23 Sept,2024',
@@ -159,9 +159,33 @@ class HomeScreenPage extends HomeScreen {
                 ),
               ],
             ),
+            const SizedBox(height: 16),
+            const Text(
+              'Articles:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: ListView(
+                children: const [
+                  ArticleWidget(
+                    heading: 'ABC hits his maiden century',
+                    bbody: 'ABC took just 66 balls to do so',
+                  ),
+                  ArticleWidget(
+                    heading: 'DEF hits 6 sixes in a row',
+                    bbody: 'Absolute madness in the middle of the ground',
+                  ),
+                  ArticleWidget(
+                    heading: 'XYZ gets his maiden fifer',
+                    bbody: 'XYZ uprooted every batter he faced',
+                  ),
           ],
         ),
       ),
+          ],
+        )
+      )
     );
   }
 }
@@ -231,6 +255,44 @@ class MatchDetailWidget extends StatelessWidget {
               ),
           ],
         ),
+      ),
+    );
+  }
+}
+class ArticleWidget extends StatelessWidget {
+  const ArticleWidget({
+    super.key,
+    required this.heading,
+    required this.bbody,
+  });
+
+  final String heading;
+  final String bbody;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            heading,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 80),
+          Text(
+            bbody,
+            style: const TextStyle(fontSize: 14),
+          ),
+        ],
       ),
     );
   }
