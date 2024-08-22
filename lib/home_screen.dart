@@ -13,14 +13,14 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class HomeScreenPage extends HomeScreen{
+class HomeScreenPage extends HomeScreen {
   const HomeScreenPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('CRICBASE')),
+        title: const Text('CRICBASE', style: TextStyle(fontWeight: FontWeight.bold),),
       ),
       drawer: Drawer(
         // backgroundColor: const Colors.grey,
@@ -144,60 +144,9 @@ class HomeScreenPage extends HomeScreen{
                 ),
               ],
             ),
-            // const SizedBox(height: 16),
-            // GestureDetector(
-            //   onTap: () {
-            //     Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //           builder: (context) => const Standings(),
-            //         ));
-            //   },
-            //   child: const Text(
-            //     'Points Table',
-            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // const SizedBox(height: 16),
-            // GestureDetector(
-            //   onTap: () {
-            //     Navigator.push(context,
-            //         MaterialPageRoute(builder: (context) => Mostruns()));
-            //   },
-            //   child: const Text(
-            //     'Most Runs',
-            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // const SizedBox(height: 16),
-            // GestureDetector(
-            //   onTap: () {
-            //     Navigator.push(context,
-            //         MaterialPageRoute(builder: (context) => Mostwickets()));
-            //   },
-            //   child: const Text(
-            //     'Most Wickets',
-            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            //   ),
-            // )
           ],
         ),
       ),
-
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: const Color.fromARGB(255, 89, 204, 220),
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.sports_cricket),
-      //       label: 'Stats',
-      //     )
-      //   ],
-
-      // ),
     );
   }
 }
