@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cricky/rating.dart';
+import 'package:cricky/article_input.dart';
 // import 'package:carousel_slider/carousel_controller.dart' as slider_controller;
 // import 'package:carousel_slider/carousel_slider.dart';
 
@@ -164,6 +165,7 @@ class HomeScreenPage extends HomeScreen {
                           team2: ' BAN',
                           status: 'Test 1 of 2',
                         ),
+                        // Spacer()
                         MatchDetailWidget(
                           date: '26-30 Sept,2024',
                           team1: ' IND',
