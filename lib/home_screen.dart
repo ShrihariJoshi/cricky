@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cricky/rating.dart';
+// import 'package:carousel_slider/carousel_controller.dart' as slider_controller;
+// import 'package:carousel_slider/carousel_slider.dart';
+
+// final slider_controller.CarouselController controller =
+//     slider_controller.CarouselController();
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,10 +25,14 @@ class HomeScreenPage extends HomeScreen {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CRICBASE', style: TextStyle(fontWeight: FontWeight.bold),),
+        // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
+        title: const Text(
+          'CRICBASE',
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
+        ),
       ),
       drawer: Drawer(
-        // backgroundColor: const Colors.grey,
+        // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
         child: ListView(
           children: <Widget>[
             const Image(
@@ -66,7 +75,8 @@ class HomeScreenPage extends HomeScreen {
                 ),
               ),
               child: ExpansionTile(
-                collapsedBackgroundColor:
+                collapsedBackgroundColor: const Color.fromARGB(255, 89, 204, 220),
+                backgroundColor:
                     const Color.fromARGB(255, 89, 204, 220),
                 shape: Border.all(
                   color: Colors.black,
@@ -103,6 +113,11 @@ class HomeScreenPage extends HomeScreen {
             ),
             SizedBox(height: 8),
             Row(
+              // options: CarouselOptions(
+              //   height: 100,
+              //   reverse: true,
+              //   enlargeCenterPage: true,
+              // ),
               children: [
                 MatchDetailWidget(
                   date: '12 Aug,2024',
