@@ -55,7 +55,7 @@ class _MyAppState extends State<Rating> {
                     MaterialPageRoute(
                         builder: (context) => const HomeScreen()));
               },
-              child: const Text('OK'),
+              child: const Text('Back to HomeScreen'),
             ),
           ],
         );
@@ -84,7 +84,7 @@ class _MyAppState extends State<Rating> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _currentRating > 0 ? _submitRating : null,
-              child: const Text('Submit'),
+              child: const Text('Submit', style: TextStyle(color: Colors.black),),
             ),
             ElevatedButton(
               onPressed: () {
@@ -93,7 +93,7 @@ class _MyAppState extends State<Rating> {
                     MaterialPageRoute(
                         builder: (context) => const HomeScreen()));
               },
-              child: const Text('Cancel'),
+              child: const Text('Cancel', style: TextStyle(color: Colors.black),),
             ),
           ],
         ),

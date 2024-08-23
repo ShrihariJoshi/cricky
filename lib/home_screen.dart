@@ -25,183 +25,183 @@ class HomeScreenPage extends HomeScreen {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
-          title: const Text(
-            'CRICBASE',
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
-          ),
+      appBar: AppBar(
+        // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
+        title: const Text(
+          'CRICBASE',
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
         ),
-        drawer: Drawer(
-          // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
-          child: ListView(
-            children: <Widget>[
-              const Image(
-                alignment: Alignment.center,
-                colorBlendMode: BlendMode.color,
-                image: AssetImage('assets/images/CRICBASE.jpg'),
+      ),
+      drawer: Drawer(
+        // backgroundColor: const Color.fromARGB(149, 8, 40, 66),
+        child: ListView(
+          children: <Widget>[
+            const Image(
+              alignment: Alignment.center,
+              colorBlendMode: BlendMode.color,
+              image: AssetImage('assets/images/CRICBASE.jpg'),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  border: Border(
+                top: BorderSide(width: 2.0),
+                left: BorderSide(width: 2.0),
+                right: BorderSide(width: 2.0),
+                bottom: BorderSide(width: 1.0),
+              )),
+              child: ListTile(
+                leading: const Icon(Icons.feedback),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Rating()));
+                },
+                tileColor: const Color.fromARGB(255, 89, 204, 220),
+                title: const Text(
+                  'Rate the App',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
               ),
-              Container(
-                decoration: const BoxDecoration(
-                    border: Border(
-                  top: BorderSide(width: 2.0),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 1.0),
                   left: BorderSide(width: 2.0),
                   right: BorderSide(width: 2.0),
-                  bottom: BorderSide(width: 1.0),
-                )),
-                child: ListTile(
-                  leading: const Icon(Icons.feedback),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Rating()));
-                  },
-                  tileColor: const Color.fromARGB(255, 89, 204, 220),
-                  title: const Text(
-                    'Rate the App',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
+                  bottom: BorderSide(width: 2.0),
                 ),
               ),
-              Container(
-                decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(width: 1.0),
-                    left: BorderSide(width: 2.0),
-                    right: BorderSide(width: 2.0),
-                    bottom: BorderSide(width: 2.0),
-                  ),
+              child: ExpansionTile(
+                collapsedBackgroundColor:
+                    const Color.fromARGB(255, 89, 204, 220),
+                backgroundColor: const Color.fromARGB(255, 89, 204, 220),
+                shape: Border.all(
+                  color: Colors.black,
+                  width: 2.0,
                 ),
-                child: ExpansionTile(
-                  collapsedBackgroundColor:
-                      const Color.fromARGB(255, 89, 204, 220),
-                  backgroundColor: const Color.fromARGB(255, 89, 204, 220),
-                  shape: Border.all(
-                    color: Colors.black,
-                    width: 2.0,
+                leading: const Icon(Icons.headset_mic, color: Colors.black),
+                title: const Text(
+                  'Support',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                children: const <Widget>[
+                  ListTile(
+                    title: Text('Contact Us: 080-260324XX'),
+                    leading: Icon(Icons.phone, color: Colors.black),
                   ),
-                  leading: const Icon(Icons.headset_mic, color: Colors.black),
-                  title: const Text(
-                    'Support',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ListTile(
+                    title: Text('Queries: cricbaseapp@gmail.com'),
+                    leading: Icon(Icons.mail, color: Colors.black),
                   ),
-                  children: const <Widget>[
-                    ListTile(
-                      title: Text('Contact Us: 080-260324XX'),
-                      leading: Icon(Icons.phone, color: Colors.black),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Recent Matches:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              child: Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  itemExtent: 190,
+                  physics: const ScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
+                  children: const [
+                    MatchDetailWidget(
+                      date: '12 Aug,2024',
+                      team1: ' IND: 176/7 (20)',
+                      team2: ' RSA: 169/8 (20)',
+                      status: 'INDIA won by 7 runs.',
+                      team2color: Colors.grey,
                     ),
-                    ListTile(
-                      title: Text('Queries: cricbaseapp@gmail.com'),
-                      leading: Icon(Icons.mail, color: Colors.black),
+                    MatchDetailWidget(
+                      date: '10 Aug,2024',
+                      team1: ' IND: 171/7 (20)',
+                      team2: ' ENG: 103/10 (16.4)',
+                      status: 'INDIA won by 68 runs.',
+                      team2color: Colors.grey,
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Upcoming Matches:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              child: Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  itemExtent: 190,
+                  physics: const ScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
+                  children: const [
+                    MatchDetailWidget(
+                      date: '19-23 Sept,2024',
+                      team1: ' IND',
+                      team2: ' BAN',
+                      status: 'Test 1 of 2',
+                    ),
+                    // Spacer()
+                    MatchDetailWidget(
+                      date: '26-30 Sept,2024',
+                      team1: ' IND',
+                      team2: ' BAN',
+                      status: 'Test 2 of 2',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Articles:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: ListView(
+                children: const [
+                  ArticleWidget(
+                    heading: 'ABC hits his maiden century',
+                    bbody: 'ABC took just 66 balls to do so.',
+                  ),
+                  ArticleWidget(
+                    heading: 'DEF smashes 6 sixes in a row',
+                    bbody: 'Absolute madness in the middle of the ground.',
+                  ),
+                  ArticleWidget(
+                    heading: 'XYZ gets his maiden fifer',
+                    bbody: 'XYZ uprooted every batter he faced.',
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Recent Matches:',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                SizedBox(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  child: Expanded(
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      itemExtent: 190,
-                      physics: const ScrollPhysics(
-                          parent: AlwaysScrollableScrollPhysics()),
-                      children: const [
-                        MatchDetailWidget(
-                          date: '12 Aug,2024',
-                          team1: ' IND: 176/7 (20)',
-                          team2: ' RSA: 169/8 (20)',
-                          status: 'INDIA won by 7 runs.',
-                          team2color: Colors.grey,
-                        ),
-                        MatchDetailWidget(
-                          date: '10 Aug,2024',
-                          team1: ' IND: 171/7 (20)',
-                          team2: ' ENG: 103/10 (16.4)',
-                          status: 'INDIA won by 68 runs.',
-                          team2color: Colors.grey,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Upcoming Matches:',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                SizedBox(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  child: Expanded(
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      itemExtent: 190,
-                      physics: const ScrollPhysics(
-                          parent: AlwaysScrollableScrollPhysics()),
-                      children: const [
-                        MatchDetailWidget(
-                          date: '19-23 Sept,2024',
-                          team1: ' IND',
-                          team2: ' BAN',
-                          status: 'Test 1 of 2',
-                        ),
-                        // Spacer()
-                        MatchDetailWidget(
-                          date: '26-30 Sept,2024',
-                          team1: ' IND',
-                          team2: ' BAN',
-                          status: 'Test 2 of 2',
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Articles:',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                Expanded(
-                  child: ListView(
-                    children: const [
-                      ArticleWidget(
-                        heading: 'ABC hits his maiden century',
-                        bbody: 'ABC took just 66 balls to do so.',
-                      ),
-                      ArticleWidget(
-                        heading: 'DEF smashes 6 sixes in a row',
-                        bbody: 'Absolute madness in the middle of the ground.',
-                      ),
-                      ArticleWidget(
-                        heading: 'XYZ gets his maiden fifer',
-                        bbody: 'XYZ uprooted every batter he faced.',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            )));
+      ),
+    );
   }
 }
 
@@ -306,22 +306,14 @@ class ArticleWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-<<<<<<< Updated upstream
-          const SizedBox(height: 40),
-          Text(
-            bbody,
-            style: const TextStyle(fontSize: 14),
-          ),
-=======
           Container(
             height: 80,
             alignment: Alignment.topLeft,
             child: Text(
               bbody,
-              style:const TextStyle(fontSize: 14),
+              style: const TextStyle(fontSize: 14),
             ),
           )
->>>>>>> Stashed changes
         ],
       ),
     );
