@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cricky/rating.dart';
 import 'package:cricky/article_input.dart';
-// import 'package:carousel_slider/carousel_controller.dart' as slider_controller;
-// import 'package:carousel_slider/carousel_slider.dart';
-
-// final slider_controller.CarouselController controller =
-//     slider_controller.CarouselController();
+import 'package:cricky/recent_matches_input.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -114,12 +110,12 @@ class HomeScreenPage extends HomeScreen {
             ),
             const SizedBox(height: 8),
             SizedBox(
-              height: 100,
+              height: 150,
               width: MediaQuery.of(context).size.width,
               child: Expanded(
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  itemExtent: 190,
+                  itemExtent: 400,
                   physics: const ScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   children: const [
@@ -130,6 +126,7 @@ class HomeScreenPage extends HomeScreen {
                       status: 'INDIA won by 7 runs.',
                       team2color: Colors.grey,
                     ),
+                    // Spacer(),
                     MatchDetailWidget(
                       date: '10 Aug,2024',
                       team1: ' IND: 171/7 (20)',
@@ -142,39 +139,39 @@ class HomeScreenPage extends HomeScreen {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Upcoming Matches:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              child: Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  itemExtent: 190,
-                  physics: const ScrollPhysics(
-                      parent: AlwaysScrollableScrollPhysics()),
-                  children: const [
-                    MatchDetailWidget(
-                      date: '19-23 Sept,2024',
-                      team1: ' IND',
-                      team2: ' BAN',
-                      status: 'Test 1 of 2',
-                    ),
-                    // Spacer()
-                    MatchDetailWidget(
-                      date: '26-30 Sept,2024',
-                      team1: ' IND',
-                      team2: ' BAN',
-                      status: 'Test 2 of 2',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
+            // const Text(
+            //   'Upcoming Matches:',
+            //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            // ),
+            // const SizedBox(height: 8),
+            // SizedBox(
+            //   height: 100,
+            //   width: MediaQuery.of(context).size.width,
+            //   child: Expanded(
+            //     child: ListView(
+            //       scrollDirection: Axis.horizontal,
+            //       itemExtent: 190,
+            //       physics: const ScrollPhysics(
+            //           parent: AlwaysScrollableScrollPhysics()),
+            //       children: const [
+            //         MatchDetailWidget(
+            //           date: '19-23 Sept,2024',
+            //           team1: ' IND',
+            //           team2: ' BAN',
+            //           status: 'Test 1 of 2',
+            //         ),
+            //         // Spacer()
+            //         MatchDetailWidget(
+            //           date: '26-30 Sept,2024',
+            //           team1: ' IND',
+            //           team2: ' BAN',
+            //           status: 'Test 2 of 2',
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // const SizedBox(height: 16),
             const Text(
               'Articles:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -237,37 +234,46 @@ class MatchDetailWidget extends StatelessWidget {
             children: [
               Text(
                 date,
-                style: const TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.left,
+              ),
+              const SizedBox(
+                height: 8,
               ),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   team1,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 22,
                     color: team1color,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
+              const SizedBox(
+                height: 4,
+              ),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   team2,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: team2color,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
+              const SizedBox(
+                height: 18,
+              ),
               if (status != null)
                 Text(
                   status!,
-                  style: const TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 18),
                   textAlign: TextAlign.right,
                 ),
             ],
