@@ -306,11 +306,22 @@ class ArticleWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+<<<<<<< Updated upstream
           const SizedBox(height: 40),
           Text(
             bbody,
             style: const TextStyle(fontSize: 14),
           ),
+=======
+          Container(
+            height: 80,
+            alignment: Alignment.topLeft,
+            child: Text(
+              bbody,
+              style:const TextStyle(fontSize: 14),
+            ),
+          )
+>>>>>>> Stashed changes
         ],
       ),
     );
