@@ -62,7 +62,7 @@ class ArticleInputState extends State<ArticleInputPage> {
               const SizedBox(
                 height: 8,
               ),
-              TextField(
+              TextField(  
                 controller: _controller,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -80,7 +80,7 @@ class ArticleInputState extends State<ArticleInputPage> {
                   final enteredText = _controller.text;
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Scorecard submitted!'),
+                      content: Text('Article submitted!'),
                     ),
                   );
                   Navigator.push(
