@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 
-// class CricbaseApp extends StatelessWidget {
-//   const CricbaseApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Cricbase',
-//       theme: ThemeData(
-//         primarySwatch: Colors.green,
-//       ),
-//       home: const ScorecardPage(),
-//     );
-//   }
-// }
-
 class ScorecardPage extends StatefulWidget {
   const ScorecardPage({super.key});
 
@@ -31,7 +16,7 @@ class _ScorecardPageState extends State<ScorecardPage> {
   final TextEditingController resultController = TextEditingController();
   final TextEditingController topBatsmenController = TextEditingController();
   final TextEditingController topBowlersController = TextEditingController();
-  final TextEditingController fallOfWicketsController = TextEditingController();
+  final TextEditingController POTMController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +75,7 @@ class _ScorecardPageState extends State<ScorecardPage> {
             TextField(
               controller: topBatsmenController,
               decoration: const InputDecoration(
-                labelText: 'Top Batsmen (comma-separated)',
+                labelText: 'Top Batsmen with score(comma-separated)',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -98,15 +83,15 @@ class _ScorecardPageState extends State<ScorecardPage> {
             TextField(
               controller: topBowlersController,
               decoration: const InputDecoration(
-                labelText: 'Top Bowlers (comma-separated)',
+                labelText: 'Top Bowlers with figures(comma-separated)',
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 10),
             TextField(
-              controller: fallOfWicketsController,
+              controller: POTMController,
               decoration: const InputDecoration(
-                labelText: 'Fall of Wickets',
+                labelText: 'Player Of The Match',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -208,7 +193,7 @@ class _ScorecardPageState extends State<ScorecardPage> {
               ),
             ),
             const SizedBox(height: 10),
-            Text(fallOfWicketsController.text),
+            Text(POTMController.text),
           ],
         ),
       ),
