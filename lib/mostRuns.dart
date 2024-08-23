@@ -10,6 +10,7 @@ class Mostruns extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Orange Cap'),
+          backgroundColor: const Color.fromARGB(255, 89, 204, 220),
         ),
         body: (const Orangecap()));
   }

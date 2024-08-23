@@ -58,7 +58,7 @@ class NavigationBarState extends State<NavigationBar> {
             label: 'Stats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.schedule),
+            icon: Icon(Icons.calendar_month_rounded),
             label: 'Schedule',)
         ],
         currentIndex: selectedIndex,

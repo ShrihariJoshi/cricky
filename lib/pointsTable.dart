@@ -8,6 +8,7 @@ class Standings extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Points Table'),
+        backgroundColor: const Color.fromARGB(255, 89, 204, 220),
       ),
       body: Container(
         color: Colors.white,

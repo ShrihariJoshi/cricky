@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const CricbaseApp());
-}
+// class CricbaseApp extends StatelessWidget {
+//   const CricbaseApp({super.key});
 
-class CricbaseApp extends StatelessWidget {
-  const CricbaseApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Cricbase',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const ScorecardPage(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Cricbase',
+//       theme: ThemeData(
+//         primarySwatch: Colors.green,
+//       ),
+//       home: const ScorecardPage(),
+//     );
+//   }
+// }
 
 class ScorecardPage extends StatefulWidget {
   const ScorecardPage({super.key});
@@ -41,8 +37,11 @@ class _ScorecardPageState extends State<ScorecardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cricket Scorecard Input'),
-        backgroundColor: Colors.green,
+        title: const Text('Cricket Scorecard Input',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 28,
+        color: Colors.black),
+        ),
+        backgroundColor: const Color.fromARGB(255, 89, 204, 220),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

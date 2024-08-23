@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cricky/rating.dart';
-import 'package:cricky/article_input.dart';
-import 'package:cricky/recent_matches_input.dart';
+import 'package:cricky/new_match_scorecard.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,8 +24,8 @@ class HomeScreenPage extends HomeScreen {
         backgroundColor: const Color.fromARGB(255, 89, 204, 220),
         title: const Text(
           'CRICBASE',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28,
-          color: Colors.black),
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 28, color: Colors.black),
         ),
       ),
       drawer: Drawer(
@@ -99,8 +98,7 @@ class HomeScreenPage extends HomeScreen {
             ),
           ],
         ),
-        ),
-      
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -108,8 +106,10 @@ class HomeScreenPage extends HomeScreen {
           children: [
             const Text(
               'Recent Matches:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,
-              color: Color(0xFF082842)),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF082842)),
             ),
             const SizedBox(height: 8),
             SizedBox(
@@ -142,43 +142,27 @@ class HomeScreenPage extends HomeScreen {
               ),
             ),
             const SizedBox(height: 16),
-            // const Text(
-            //   'Upcoming Matches:',
-            //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            // ),
-            // const SizedBox(height: 8),
-            // SizedBox(
-            //   height: 100,
-            //   width: MediaQuery.of(context).size.width,
-            //   child: Expanded(
-            //     child: ListView(
-            //       scrollDirection: Axis.horizontal,
-            //       itemExtent: 190,
-            //       physics: const ScrollPhysics(
-            //           parent: AlwaysScrollableScrollPhysics()),
-            //       children: const [
-            //         MatchDetailWidget(
-            //           date: '19-23 Sept,2024',
-            //           team1: ' IND',
-            //           team2: ' BAN',
-            //           status: 'Test 1 of 2',
-            //         ),
-            //         // Spacer()
-            //         MatchDetailWidget(
-            //           date: '26-30 Sept,2024',
-            //           team1: ' IND',
-            //           team2: ' BAN',
-            //           status: 'Test 2 of 2',
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ScorecardPage()));
+              },
+              child: const Text(
+                'Add a Match Scorecard',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const Text(
               'Articles:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,
-              color: Color(0xFF082842)),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF082842)),
             ),
             const SizedBox(height: 8),
             Expanded(
@@ -314,18 +298,17 @@ class ArticleWidget extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 8.0),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.black),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          )
-        ]
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.black),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            )
+          ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

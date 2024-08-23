@@ -6,7 +6,8 @@ class Mostwickets extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: Text('Purple Cap'),
+          title: const Text('Purple Cap'),
+          backgroundColor: const Color.fromARGB(255, 89, 204, 220),
         ),
         body: (Purplecap()));
   }
@@ -16,14 +17,14 @@ class Purplecap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return DataTable(columns: [
+    return DataTable(columns: const [
       DataColumn(label: Text('Standing')),
       DataColumn(label: Text('Name')),
       DataColumn(label: Text('Innings')),
       DataColumn(label: Text('Wickets')),
       DataColumn(label: Text('Economy')),
       DataColumn(label: Text('Team')),
-    ], rows: [
+    ], rows: const [
       DataRow(cells: [
         DataCell(Text('1')),
         DataCell(Text('Virat Kohli')),
