@@ -1,5 +1,6 @@
 import 'package:cricky/home_screen.dart';
 import 'package:cricky/stats.dart';
+import 'package:cricky/upcoming_matches.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,9 +29,10 @@ class NavigationBarState extends State<NavigationBar> {
   @override
   Widget build(BuildContext context) {
     // List of widgets corresponding to each bottom navigation item
-    const List<Widget> widgetOptions = <Widget>[
-      HomeScreen(),
-      Stats(),
+    List<Widget> widgetOptions = <Widget>[
+      const HomeScreen(),
+      const Stats(),
+      TournamentSchedule(),
     ];
 
     void onItemTapped(int index) {
@@ -55,6 +57,9 @@ class NavigationBarState extends State<NavigationBar> {
             icon: Icon(Icons.sports_cricket),
             label: 'Stats',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.schedule),
+            label: 'Schedule',)
         ],
         currentIndex: selectedIndex,
         selectedItemColor: Colors.black,
