@@ -51,7 +51,6 @@ class ArticleInputState extends State<ArticleInputPage> {
                   hintText: 'Type something...',
                 ),
                 maxLength: 40,
-                maxLines: 1,
               ),
               const SizedBox(
                 height: 30,
@@ -71,7 +70,6 @@ class ArticleInputState extends State<ArticleInputPage> {
                   hintText: 'Type something...',                  
                 ),
                 maxLength: 200,
-                maxLines: 3,
               ),
               const SizedBox(
                 height: 30,
