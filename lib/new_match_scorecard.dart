@@ -186,7 +186,7 @@ class _ScorecardPageState extends State<ScorecardPage> {
             const Divider(color: Colors.black),
             const SizedBox(height: 20),
             const Text(
-              'Fall of Wickets:',
+              'Player of the match:',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
