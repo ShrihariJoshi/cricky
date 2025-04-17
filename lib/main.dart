@@ -62,7 +62,7 @@ class NavigationBarState extends State<NavigationBar> {
             label: 'Schedule',)
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: const Color.fromARGB(255, 88, 48, 48),
         unselectedItemColor: Colors.white,
         onTap: onItemTapped,
       ),
